@@ -103,7 +103,7 @@ TARGET_RECOVERY_FSTAB = device/motorola/kinzie/twrp.fstab
 
 # TWRP Build Flags
 #DEVICE_RESOLUTION := 1440x2560
-TW_THEME := portrait_hdpi
+TW_THEME := portrait_xxhdpi
 TW_INCLUDE_L_CRYPTO := true
 TW_NEW_ION_HEAP := true
 TW_INCLUDE_CRYPTO := true
