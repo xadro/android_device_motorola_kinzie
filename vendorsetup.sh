@@ -14,5 +14,6 @@
 # limitations under the License.
 #
 
-add_lunch_combo cm_kinzie-userdebug
+add_lunch_combo omni_kinzie-userdebug
+add_lunch_combo omni_kinzie-eng
 
