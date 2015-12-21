@@ -19,7 +19,7 @@
 
 
 # inherit from the proprietary version
--include vendor/motorola/kinzie/BoardConfigVendor.mk
+#-include vendor/motorola/kinzie/BoardConfigVendor.mk
 
 #Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8994
@@ -59,7 +59,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 42024960
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4294967296
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 25832587264
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64) #verified
-ARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_EXT4 := true
 
 #Graphics
 # Shader cache config options
@@ -96,17 +96,18 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
 TARGET_PREBUILT_KERNEL := device/motorola/kinzie/recovery/kernel
+TARGET_SPECIFIC_HEADER_PATH := device/moto/kinzie/include #add ion heap from kernel source
 TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_FSTAB = device/motorola/kinzie/twrp.fstab
 
 # TWRP Build Flags
 DEVICE_RESOLUTION := 1440x2560
-TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 TW_INCLUDE_L_CRYPTO := true
 TW_NEW_ION_HEAP := true
 TW_INCLUDE_CRYPTO := true
-TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_SCREEN_BLANK := true
+#TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 
