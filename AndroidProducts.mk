@@ -15,4 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cm_kinzie.mk
+    $(LOCAL_DIR)/full_kinzie.mk \
+	$(LOCAL_DIR)/omni_kinzie.mk 
