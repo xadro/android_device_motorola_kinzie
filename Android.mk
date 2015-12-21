@@ -23,11 +23,11 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-ifneq ($(filter kinzie, $(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),kinzie)
 
 LOCAL_PATH := $(call my-dir)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
-
+include $(CLEAR_VARS)
 endif
 
