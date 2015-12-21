@@ -19,10 +19,15 @@
 #
 # Everything in this directory will become public
 
-LOCAL_KERNEL := device/motorola/kinzie/kernel
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+$(call inherit-product-if-exists, vendor/motorola/kinzie-common/kinzie-common-vendor.mk)
 
-PRODUCT_COPY_FILES := \
-    $(LOCAL_KERNEL):kernel
 
+LOCAL_KERNEL := device/motorola/kinzie/recovery/kernel
 
-
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel #\
+    #bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
