@@ -11,6 +11,9 @@ $(call inherit-product, device/motorola/kinzie/full_kinzie.mk)
 # Release name
 PRODUCT_RELEASE_NAME := kinzie
 
+# must be before including omni part
+TARGET_BOOTANIMATION_SIZE := 1440x2560
+
 # Inherit some common DU stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, device/motorola/kinzie/device.mk)
