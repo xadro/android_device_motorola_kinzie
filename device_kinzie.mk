@@ -28,13 +28,15 @@ DEVICE_PACKAGE_OVERLAYS += device/motorola/kinzie/overlay
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/motorola/kinzie/kernel
+	LOCAL_KERNEL := device/motorola/kinzie/recovery/kernel
+       
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+PRODUCT_COPY_FILES := \
+    $(LOCAL_KERNEL):kernel 
+    
 
 $(call inherit-product, build/target/product/full.mk)
 

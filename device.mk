@@ -19,10 +19,7 @@
 #
 # Everything in this directory will become public
 
-LOCAL_KERNEL := device/motorola/kinzie/kernel
+LOCAL_KERNEL := device/motorola/kinzie/recovery/kernel
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
-
-
-

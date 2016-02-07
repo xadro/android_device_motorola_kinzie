@@ -10,11 +10,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-#BOARD_VENDOR := motorola
-
 #TODO:
-#make split fb work. unil now only one fb is working, resulting in split screen, right half is showing twrp, left half remains in splash/curtain
+# nada :)
+
+BOARD_VENDOR := motorola
 
 # inherit from the proprietary version
 -include vendor/motorola/kinzie/BoardConfigVendor.mk
@@ -60,21 +59,6 @@ BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64) #verified
 TARGET_USERIMAGES_USE_EXT4 := true
 
 #Graphics
-# Shader cache config options
-# Maximum size of the  GLES Shaders that can be cached for reuse.
-# Increase the size if shaders of size greater than 12KB are used.
-#MAX_EGL_CACHE_KEY_SIZE := 12*1024
-
-# Maximum GLES shader cache size for each app to store the compiled shader
-# binaries. Decrease the size if RAM or Flash Storage size is a limitation
-# of the device.
-#MAX_EGL_CACHE_SIZE := 2048*1024
-
-#BOARD_EGL_CFG := device/moto/clark/egl.cfg
-
-#USE_OPENGL_RENDERER := true
-#VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
-#SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 TARGET_USES_QCOM_BSP := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
@@ -82,10 +66,6 @@ TARGET_USES_OVERLAY := true
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-#HAVE_ADRENO_SOURCE:= false
-
-#OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
-#TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -96,19 +76,18 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
 TARGET_PREBUILT_KERNEL := device/motorola/kinzie/recovery/kernel
 TARGET_SPECIFIC_HEADER_PATH := device/motorola/kinzie/include #add ion heap from kernel source
-TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
+TARGET_RECOVERY_PIXEL_FORMAT := RGBA_8888
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_FSTAB = device/motorola/kinzie/twrp.fstab
 
 # TWRP Build Flags
-DEVICE_RESOLUTION := 1440x2560 #deprecated
-#TW_THEME := portrait_hdpi
+BOARD_HAS_FLIPPED_SCREEN := true 
+TW_THEME := portrait_hdpi
 TW_INCLUDE_L_CRYPTO := true
 TW_TARGET_USES_QCOM_BSP := true
 TW_NEW_ION_HEAP := true
 TW_INCLUDE_CRYPTO := true
 TW_NO_SCREEN_BLANK := true
-#TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 

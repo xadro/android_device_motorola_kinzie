@@ -6,7 +6,7 @@
 /cache           ext4              /dev/block/bootdevice/by-name/cache
 /recovery        emmc              /dev/block/bootdevice/by-name/recovery
 #/persist         ext4              /dev/block/bootdevice/by-name/persist
-#/firmware        ext4              /dev/block/bootdevice/by-name/modem
+/firmware        ext4              /dev/block/bootdevice/by-name/modem
 /misc            emmc              /dev/block/bootdevice/by-name/misc
 #/fsg             ext4              /dev/block/bootdevice/by-name/fsg
 /efs1            emmc              /dev/block/bootdevice/by-name/modemst1   flags=backup=1;display=EFS
